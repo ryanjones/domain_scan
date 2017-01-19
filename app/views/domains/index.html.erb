@@ -1,0 +1,16 @@
+Snapshot of all domains
+<br/>
+
+<% @domains.each do |domain| %>
+  <br/>
+  Domain: <strong><%= domain.url %></strong>
+  <br/>
+  Status Code: <%= domain.status_code %>
+  <br/>
+  <% if domain.file_path.present? %>
+    <%= image_tag("/images/domains/#{domain.file_path}") %>
+    <br/>
+  <% else %>
+    No Image Found
+  <% end %>
+<% end %>
